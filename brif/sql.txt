@@ -1,0 +1,63 @@
+2) 
+ SELECT num-bien count(), FROM bien immobilier b INNER Join quartier q on q.code-quarier=code bien 
+INNER JOIN ville v on code v.code ville = q.code ville 
+
+3)
+SELECT c. code bien ,count()
+FROM contrat c 
+GROUPE BY c.d=code bien 
+HAVING count()= (SELECT count() FROM contrat c GROUP BY code bien ORDER BY count() dsc LIMIT 1
+
+4)
+SELECT s.nom-syndic 
+FROM syndic s
+ WEHER s. code syndic = not in
+ ( SELECT s.code syndic FROM contrat inner join bien immobilie b where R. nom region = "oriontal"
+
+
+5)
+SELECT b.code-bien, sum(c.PRIX*12) from bien immobilier b inner join contrat c on c.code bien = b.code bien 
+GROUP BY b.code bien
+having sum(c.prix men*12) = (
+SELECT sum(c.prix men*12) from  contrat 
+GROUP BY c. code bien 
+ORDER BY sum(c.prix men*12) 
+LIMIT 1
+
+6) 
+SELECT b.code bien
+FROM bien immobilier b 
+WHERE date = ( SELECT MIN(date) 
+from bien immobilier );
+
+
+7)
+SELECT S.nom syndic count(*)
+FROM s.syndic
+inner join contrat c on c.code syndic=s code syndic 
+HAVING cont(*)=
+
+(select count(*) FROM contrat c 
+INNER join bien immobilier b on c.code bien = b.code bien
+INNER join quartier q on b. code bien = q.code quaretier 
+INNER join ville v on q.code quartier= v.code ville
+INNER join region r on v.code ville= r.code region
+groupe by r.no, region 
+order by  count(*)desc
+limit 1
+
+
+8)
+
+SELECT q.mon quartier count(*) 
+FROM quartier q INNER join bien immobilier b on b.code bien= q.code bien INNER join contrat c on c code bien = q.code bien 
+GROPR BY q.nom quartier 
+
+HAVING count(*)=1
+
+
+
+
+ 
+
+
